@@ -1,4 +1,4 @@
-#Descripción del Proyecto:
+# Descripción del Proyecto:
 
 - Desarrollar un software que permita a los usuarios monitorear y gestionar el consumo de energía en tiempo real en hogares, oficinas o plantas industriales. 
 
