@@ -1,0 +1,76 @@
+1. Instalación de Dependencias
+En Git Bash (Windows):
+Abre Git Bash.
+
+# Comando para dirigirme al proyecto
+
+cd ruta/al/proyecto
+
+# Comando para instalarlo
+git bash
+
+pip install dash pandas sqlite3 bcrypt
+
+
+# Ejecucion del proyecto
+
+En Git Bash (Windows):
+
+Ejecuta el archivo con:
+
+bash
+
+python energywatch.py
+
+# Acceso al Panel de Control
+
+Una vez que el servidor esté en funcionamiento, verás un mensaje como este en la terminal:
+Running on http://127.0.0.1:8050/
+
+Abre tu navegador web (Chrome, Firefox, etc.) y visita la dirección:
+http://127.0.0.1:8050/
+
+# Iniciar Sesion
+
+En la pagina web ingresaremos lo ss:
+Usuario: admin
+Contraseña: 1234
+Y le damos a iniciar sesion
+
+# Notas adicionales
+
+Python y pip: Asegúrate de tener Python instalado en tu sistema. Puedes verificar la instalación ejecutando:
+
+bash
+python --version
+pip --version
+Si no tienes Python instalado, descárgalo desde python.org.
+
+Entorno virtual (opcional): Si prefieres trabajar en un entorno virtual para evitar conflictos de dependencias, puedes crear uno:
+
+bash
+python -m venv venv
+source venv/bin/activate  # En macOS/Linux
+venv\Scripts\activate     # En Windows (Git Bash)
+
+
+# Cómo Funciona el Proyecto
+- Base de Datos:
+
+Se crea una base de datos SQLite (energy_data.db) con dos tablas: consumption (para almacenar los datos de consumo) y users (para almacenar usuarios y contraseñas cifradas).
+
+- Simulación de Datos:
+
+Cada 5 segundos, se simula un nuevo dato de consumo energético y se almacena en la base de datos.
+
+- Autenticación:
+
+Los usuarios deben iniciar sesión con un nombre de usuario y contraseña. Las contraseñas se almacenan cifradas usando bcrypt.
+
+- Visualización:
+
+Se utiliza Dash para crear un panel de control web que muestra un gráfico en tiempo real del consumo de energía.
+
+- Seguridad:
+
+Se implementa autenticación básica y cifrado de contraseñas para proteger el acceso al sistema.

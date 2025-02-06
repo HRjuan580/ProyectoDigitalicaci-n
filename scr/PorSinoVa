@@ -1,0 +1,91 @@
+1. Verifica la Instalación de Python y pip
+Primero, asegúrate de que Python y pip estén correctamente instalados en tu sistema.
+
+Abre una terminal o PowerShell (en Windows).
+
+Ejecuta los siguientes comandos para verificar la instalación:
+
+bash
+
+python --version
+pip --version
+
+2. Instala las Dependencias
+Una vez que hayas verificado que Python y pip están instalados, instala las dependencias necesarias (dash, pandas, bcrypt y plotly).
+
+Abre una terminal o PowerShell.
+
+Ejecuta el siguiente comando para instalar las dependencias:
+
+bash
+
+pip install dash pandas bcrypt plotly
+Si estás en Windows y recibes un error de permisos, intenta ejecutar PowerShell como administrador y luego instala las dependencias.
+
+3. Verifica la Instalación de las Dependencias
+Después de instalar las dependencias, verifica que estén correctamente instaladas.
+
+Abre una terminal o PowerShell.
+
+Ejecuta el siguiente comando para listar las bibliotecas instaladas:
+
+bash
+
+pip list
+Deberías ver dash, pandas, bcrypt y plotly en la lista.
+
+4. Ejecuta el Proyecto
+Una vez que hayas instalado las dependencias, intenta ejecutar el proyecto nuevamente.
+
+Navega al directorio donde tienes el archivo energywatch.py:
+
+bash
+
+cd C:\Users\usuario\0rebrive\Documents\ProyectoDigitalicacion\ProyectoDigitalicacion\src
+Ejecuta el archivo:
+
+bash
+
+python energywatch.py
+5. Si el Error Persiste
+Si sigues viendo el error ModuleNotFoundError, es posible que estés utilizando un entorno de Python diferente al que tiene las dependencias instaladas. Aquí te explico cómo solucionarlo:
+
+a. Verifica el Entorno de Python
+Ejecuta el siguiente comando para verificar la ubicación de Python:
+
+bash
+
+which python  # En macOS/Linux
+where python  # En Windows
+Asegúrate de que estás utilizando la misma instalación de Python donde instalaste las dependencias.
+
+b. Usa un Entorno Virtual (Recomendado)
+Un entorno virtual te permite aislar las dependencias del proyecto. Sigue estos pasos para crear y activar un entorno virtual:
+
+Crea un entorno virtual:
+
+bash
+
+python -m venv venv
+Activa el entorno virtual:
+
+En Windows:
+
+bash
+
+venv\Scripts\activate
+En macOS/Linux:
+
+bash
+
+source venv/bin/activate
+Instala las dependencias dentro del entorno virtual:
+
+bash
+
+pip install dash pandas bcrypt plotly
+Ejecuta el proyecto:
+
+bash
+
+python energywatch.py
