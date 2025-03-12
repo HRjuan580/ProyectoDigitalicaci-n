@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Monitor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Monitoreo de Consumo Energético</h1>
+    <canvas id="energyChart" width="400" height="200"></canvas>
+    <script>
+        const ctx = document.getElementById('energyChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Consumo (kW)',
+                    data: [],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    x: { type: 'time', time: { unit: 'second' } },
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        async function fetchData() {
+            const response = await fetch('/api/energy');
+            const data = await response.json();
+            chart.data.labels = data.map(entry => entry[0]);
+            chart.data.datasets[0].data = data.map(entry => entry[1]);
+            chart.update();
+        }
+
+        setInterval(fetchData, 5000);  // Actualizar cada 5 segundos
+    </script>
+</body>
+</html>
