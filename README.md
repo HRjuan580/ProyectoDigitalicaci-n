@@ -134,3 +134,5 @@ El proyecto utiliza el protocolo MQTT para recibir datos desde sensores IoT. MQT
 
 # Licencia
 Este proyecto está bajo la licencia de MIT. Consulta LICENCE para mas detalles
+
+
